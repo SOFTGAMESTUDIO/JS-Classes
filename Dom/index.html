@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--
+    <!DOCTYPE html>
+    Tells the browser that this document uses HTML5.
+-->
+
+<html lang="en">
+<!-- Root element of HTML -->
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Description -->
+    <meta name="description" content="HTML Learning Example">
+
+    <!-- Keywords -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, DOM">
+
+    <!-- Author -->
+    <meta name="author" content="Soft Game Studio">
+
+    <!-- Browser Tab Title -->
+    <title>HTML Complete Learning File</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CDN Library Example -->
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+
+    <!-- Internal CSS -->
+    <style>
+
+        /*
+            Internal CSS
+            CSS written inside <style> tag
+        */
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .box {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1>HTML Complete Guide</h1>
+
+        <p>
+            Learning HTML, CSS, JavaScript and DOM Manipulation
+        </p>
+
+    </header>
+
+    <hr>
+
+    <!-- ================= INLINE CSS ================= -->
+
+    <section>
+
+        <h2>Inline CSS Example</h2>
+
+        <!-- CSS written directly in style attribute -->
+        <p style="color:red; font-size:20px;">
+            This text uses Inline CSS.
+        </p>
+
+    </section>
+
+    <hr>
+
+    <!-- ================= INTERNAL CSS ================= -->
+
+    <section>
+
+        <h2>Internal CSS Example</h2>
+
+        <div class="box">
+            This box is styled using Internal CSS.
+        </div>
+
+    </section>
+
+    <hr>
+
+    <!-- ================= EXTERNAL CSS ================= -->
+
+    <section>
+
+        <h2>External CSS Example</h2>
+
+        <p>
+            External CSS comes from style.css file.
+        </p>
+
+    </section>
+
+    <hr>
+
+    <!-- ================= HTML ELEMENTS ================= -->
+
+    <section>
+
+        <h2>Common HTML Tags</h2>
+
+        <p>Paragraph Tag</p>
+
+        <a href="https://google.com" target="_blank">
+            Anchor Link
+        </a>
+
+        <br><br>
+
+        <img
+            src="https://via.placeholder.com/200"
+            alt="Sample Image">
+
+        <br><br>
+
+        <button>Simple Button</button>
+
+    </section>
+
+    <hr>
+
+    <!-- ================= DOM SECTION ================= -->
+
+    <section>
+
+        <h2>DOM Manipulation Examples</h2>
+
+        <h3 id="title">Original Heading</h3>
+
+        <p class="description">
+            Original Paragraph
+        </p>
+
+        <div id="container"></div>
+
+        <button id="changeTextBtn">
+            Change Text
+        </button>
+
+        <button id="changeStyleBtn">
+            Change Style
+        </button>
+
+        <button id="createElementBtn">
+            Create Element
+        </button>
+
+        <button id="removeElementBtn">
+            Remove Element
+        </button>
+
+    </section>
+
+    <hr>
+
+    <!-- ================= INTERNAL JAVASCRIPT ================= -->
+
+    <script>
+
+        /*
+        =====================================
+        DOM INTRODUCTION
+        =====================================
+
+        DOM = Document Object Model
+
+        Browser converts HTML into a tree structure.
+
+        JavaScript can:
+        - Read elements
+        - Change elements
+        - Add elements
+        - Remove elements
+        - Handle events
+        */
+
+        /*
+        =====================================
+        SELECTING ELEMENTS
+        =====================================
+        */
+
+        // By ID
+        const title = document.getElementById("title");
+
+        // By Class
+        const desc =
+            document.getElementsByClassName("description");
+
+        // By Tag
+        const tag = 
+            document.getElementsByTagName("p");
+
+        // Query Selector
+        const para =
+            document.querySelector(".description");
+
+        // Query Selector All
+        const allButtons =
+            document.querySelectorAll("button");
+
+        console.log(title);
+        console.log(desc);
+        console.log(para);
+        console.log(allButtons);
+
+        /*
+        =====================================
+        CHANGING CONTENT
+        =====================================
+        */
+
+        document
+            .getElementById("changeTextBtn")
+            .addEventListener("click", function () {
+
+                title.textContent =
+                    "Heading Changed Successfully";
+
+                para.innerHTML =
+                    "<b>Paragraph Updated Using JavaScript</b>";
+
+            });
+
+        /*
+        =====================================
+        CHANGING STYLES
+        =====================================
+        */
+
+        document
+            .getElementById("changeStyleBtn")
+            .addEventListener("click", function () {
+
+                title.style.color = "blue";
+
+                title.style.fontSize = "35px";
+
+                title.style.backgroundColor =
+                    "lightyellow";
+
+            });
+
+        /*
+        =====================================
+        CREATING ELEMENTS
+        =====================================
+        */
+
+        document
+            .getElementById("createElementBtn")
+            .addEventListener("click", function () {
+
+                const newElement =
+                    document.createElement("p");
+
+                newElement.textContent =
+                    "New Paragraph Created Dynamically";
+
+                newElement.id = "dynamicParagraph";
+
+                document
+                    .getElementById("container")
+                    .appendChild(newElement);
+
+            });
+
+        /*
+        =====================================
+        REMOVING ELEMENTS
+        =====================================
+        */
+
+        document
+            .getElementById("removeElementBtn")
+            .addEventListener("click", function () {
+
+                const element =
+                    document.getElementById(
+                        "dynamicParagraph"
+                    );
+
+                if (element) {
+                    element.remove();
+                }
+
+            });
+
+        /*
+        =====================================
+        EVENT LISTENERS
+        =====================================
+        */
+
+        // Click Event
+        title.addEventListener("click", function () {
+
+            alert("Heading Clicked");
+
+        });
+
+        // Mouse Over Event
+        title.addEventListener("mouseover", function () {
+
+            title.classList.add("highlight");
+
+        });
+
+        // Mouse Leave Event
+        title.addEventListener("mouseleave", function () {
+
+            title.classList.remove("highlight");
+
+        });
+
+        /*
+        =====================================
+        COMMON DOM METHODS
+        =====================================
+        */
+
+        // getElementById()
+        // getElementsByClassName()
+        // getElementsByTagName()
+        // querySelector()
+        // querySelectorAll()
+
+        /*
+        =====================================
+        COMMON DOM PROPERTIES
+        =====================================
+        */
+
+        // innerHTML
+        // textContent
+        // innerText
+        // style
+        // classList
+
+        /*
+        =====================================
+        COMMON DOM ACTIONS
+        =====================================
+        */
+
+        // createElement()
+        // appendChild()
+        // remove()
+        // removeChild()
+        // setAttribute()
+        // getAttribute()
+
+    </script>
+
+    <!-- ================= EXTERNAL JAVASCRIPT ================= -->
+
+    <!--
+        External JS File
+        Create script.js file
+
+        <script src="script.js"></script>
+    -->
+
+    <!-- ================= FOOTER SCRIPT ================= -->
+
+    <!--
+        Best Practice:
+        Put script before closing body tag.
+        Reason:
+        HTML loads first, JS loads later.
+        Faster page loading.
+    -->
+
+</body>
+
+</html>
