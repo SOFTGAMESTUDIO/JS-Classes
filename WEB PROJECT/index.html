@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SGS E-COM — A complete frontend e-commerce learning project by Soft Game Studio. Learn HTML, CSS, JavaScript, Fetch API, CRUD Operations and more.">
+
+    <title>SGS E-COM | Learn Frontend E-Commerce Development</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+    <!-- =========================================
+         HEADER / NAVBAR
+    ========================================== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">⚡ SGS E-COM</div>
+
+            <div class="nav-search">
+                <span class="search-icon">🔍</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html" class="active">🏠 Home</a></li>
+                <li><a href="product.html">📦 Products</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- =========================================
+         HERO SECTION
+    ========================================== -->
+    <section class="hero" id="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-eyebrow">
+                <span class="dot"></span>
+                SGS E-COM Learning Project · Powered by MockAPI
+            </div>
+
+            <h1>
+                Build Real <span class="gradient-text">E-Commerce</span><br>
+                With JavaScript
+            </h1>
+
+            <p>
+                A hands-on project to master HTML, CSS, JavaScript,
+                Fetch API, CRUD Operations, and Admin Dashboards —
+                no backend required.
+            </p>
+
+            <div class="hero-actions">
+                <a href="product.html" class="btn btn-primary">
+                    🛍️ Shop Products
+                </a>
+                <a href="admin.html" class="btn btn-outline">
+                    ⚙️ Admin Dashboard
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number" id="heroProductCount">—</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number" id="heroUserCount">—</div>
+                    <div class="stat-label">Users</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Pages</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Frontend</div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         FEATURES STRIP
+    ========================================== -->
+    <section class="features-section">
+        <div class="section-wrap">
+
+            <div class="features-grid">
+
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Fetch API</h4>
+                    <p>Real API calls using fetch(), async/await, and proper error handling.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h4>Search & Filter</h4>
+                    <p>Live search, category filtering, and price sorting with array methods.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🛠️</div>
+                    <h4>CRUD Operations</h4>
+                    <p>Create, Read, Update, Delete products and users via REST API.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h4>Admin Dashboard</h4>
+                    <p>Full admin panel with stats, data tables, and management controls.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h4>Responsive Design</h4>
+                    <p>Mobile-first layout that works on all screen sizes.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         FILTER BAR (STICKY)
+    ========================================== -->
+    <div class="home-filters" id="filtersBar">
+        <div class="section-wrap">
+
+            <select id="categoryFilter" class="filter-select">
+                <option value="">📂 All Categories</option>
+            </select>
+
+            <select id="sortPrice" class="filter-select">
+                <option value="">↕️ Sort by Price</option>
+                <option value="low">⬆️ Low to High</option>
+                <option value="high">⬇️ High to Low</option>
+            </select>
+
+            <span class="product-count-badge" id="productCount">Loading...</span>
+
+        </div>
+    </div>
+
+    <!-- =========================================
+         FEATURED PRODUCTS SECTION
+    ========================================== -->
+    <section class="featured-section">
+        <div class="section-wrap">
+
+            <div class="section-header">
+                <div class="section-header-left">
+                    <h2>Featured <span>Products</span></h2>
+                    <p>Discover our collection — loaded live from MockAPI</p>
+                </div>
+                <a href="product.html" class="btn btn-outline">View All →</a>
+            </div>
+
+            <!-- Loader -->
+            <div id="loader" class="loader-wrap">
+                <div class="spinner"></div>
+                <p>Fetching products from API...</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsContainer" class="products-grid">
+                <!-- Rendered by home.js -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         JS CONCEPTS SECTION
+    ========================================== -->
+    <section class="concepts-section">
+        <div class="section-wrap">
+
+            <div class="section-header">
+                <div class="section-header-left">
+                    <h2>What You'll <span>Learn</span></h2>
+                    <p>JavaScript concepts demonstrated in this project</p>
+                </div>
+            </div>
+
+            <div class="concepts-grid">
+
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <div class="concept-icon">🌐</div>
+                        <h4>Fetch API & Async</h4>
+                    </div>
+                    <div class="concept-tags">
+                        <span class="concept-tag">fetch()</span>
+                        <span class="concept-tag">async</span>
+                        <span class="concept-tag">await</span>
+                        <span class="concept-tag">then()</span>
+                        <span class="concept-tag">catch()</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <div class="concept-icon">🖥️</div>
+                        <h4>DOM Manipulation</h4>
+                    </div>
+                    <div class="concept-tags">
+                        <span class="concept-tag">getElementById</span>
+                        <span class="concept-tag">querySelector</span>
+                        <span class="concept-tag">innerHTML</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <div class="concept-icon">🎯</div>
+                        <h4>Events</h4>
+                    </div>
+                    <div class="concept-tags">
+                        <span class="concept-tag">click</span>
+                        <span class="concept-tag">change</span>
+                        <span class="concept-tag">input</span>
+                        <span class="concept-tag">submit</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <div class="concept-icon">📋</div>
+                        <h4>Array Methods</h4>
+                    </div>
+                    <div class="concept-tags">
+                        <span class="concept-tag">map()</span>
+                        <span class="concept-tag">filter()</span>
+                        <span class="concept-tag">find()</span>
+                        <span class="concept-tag">sort()</span>
+                        <span class="concept-tag">reduce()</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <div class="concept-icon">🔄</div>
+                        <h4>CRUD Operations</h4>
+                    </div>
+                    <div class="concept-tags">
+                        <span class="concept-tag">GET</span>
+                        <span class="concept-tag">POST</span>
+                        <span class="concept-tag">PUT</span>
+                        <span class="concept-tag">DELETE</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <div class="concept-icon">💾</div>
+                        <h4>Storage</h4>
+                    </div>
+                    <div class="concept-tags">
+                        <span class="concept-tag">localStorage</span>
+                        <span class="concept-tag">sessionStorage</span>
+                        <span class="concept-tag">URLSearchParams</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         PROJECT FLOW SECTION
+    ========================================== -->
+    <section class="flow-section">
+        <div class="section-wrap">
+
+            <div class="section-header" style="justify-content:center; text-align:center; margin-bottom:40px;">
+                <div class="section-header-left" style="text-align:center;">
+                    <h2>Project <span>Flow</span></h2>
+                    <p>Navigate through the complete learning journey</p>
+                </div>
+            </div>
+
+            <div class="flow-steps">
+
+                <div class="flow-step">
+                    <a href="index.html" class="flow-node">
+                        <span class="node-icon">🏠</span>
+                        <span class="node-label">Home</span>
+                    </a>
+                </div>
+
+                <span class="flow-arrow">→</span>
+
+                <div class="flow-step">
+                    <a href="product.html" class="flow-node">
+                        <span class="node-icon">📦</span>
+                        <span class="node-label">Products</span>
+                    </a>
+                </div>
+
+                <span class="flow-arrow">→</span>
+
+                <div class="flow-step">
+                    <a href="#" class="flow-node">
+                        <span class="node-icon">🔍</span>
+                        <span class="node-label">Details</span>
+                    </a>
+                </div>
+
+                <span class="flow-arrow">→</span>
+
+                <div class="flow-step">
+                    <a href="profile.html" class="flow-node">
+                        <span class="node-icon">👤</span>
+                        <span class="node-label">Profile</span>
+                    </a>
+                </div>
+
+                <span class="flow-arrow">→</span>
+
+                <div class="flow-step">
+                    <a href="admin.html" class="flow-node">
+                        <span class="node-icon">⚙️</span>
+                        <span class="node-label">Admin</span>
+                    </a>
+                </div>
+
+                <span class="flow-arrow">→</span>
+
+                <div class="flow-step">
+                    <div class="flow-node" style="border-color: var(--primary); background: rgba(99,102,241,0.12);">
+                        <span class="node-icon">✅</span>
+                        <span class="node-label" style="color: var(--primary-light);">Complete!</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <span class="logo">⚡ SGS E-COM</span>
+                <p>
+                    A complete frontend e-commerce learning project
+                    demonstrating HTML, CSS, JavaScript, and MockAPI
+                    integration without any backend server.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="product.html">📦 Products</a></li>
+                    <li><a href="profile.html">👤 Profile</a></li>
+                    <li><a href="admin.html">⚙️ Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Concepts</h4>
+                <ul>
+                    <li><a href="#">Fetch API</a></li>
+                    <li><a href="#">Async / Await</a></li>
+                    <li><a href="#">CRUD Operations</a></li>
+                    <li><a href="#">DOM Manipulation</a></li>
+                    <li><a href="#">Array Methods</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SGS E-COM. All rights reserved.</p>
+            <div class="footer-badge">
+                Built with ❤️ by <span>Soft Game Studio</span>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+</html>

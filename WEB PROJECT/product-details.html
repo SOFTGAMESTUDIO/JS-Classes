@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View product details — SGS E-COM learning project.">
+
+    <title>Product Details | SGS E-COM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+    <!-- =========================================
+         HEADER / NAVBAR
+    ========================================== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">⚡ SGS E-COM</div>
+
+            <div class="nav-search" style="opacity:0.5; pointer-events:none;">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search products..." disabled>
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="product.html" class="active">📦 Products</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- =========================================
+         PRODUCT DETAILS MAIN
+    ========================================== -->
+    <div class="details-main">
+        <div class="section-wrap">
+
+            <!-- Back Button -->
+            <a href="product.html" class="back-btn">
+                ← Back to Products
+            </a>
+
+            <!-- Loader -->
+            <div id="loader" class="loader-wrap">
+                <div class="spinner"></div>
+                <p>Loading product details...</p>
+            </div>
+
+            <!-- Product Details Grid -->
+            <div id="productDetails" class="details-grid" style="display:none;">
+
+                <!-- Image Column -->
+                <div class="details-img-wrap" id="imgWrap">
+                    <img
+                        id="productImage"
+                        class="details-img"
+                        src=""
+                        alt="Product Image"
+                    >
+                    <span class="details-img-badge" id="categoryBadge"></span>
+                </div>
+
+                <!-- Info Column -->
+                <div class="details-info">
+
+                    <p class="details-id" id="productId"></p>
+
+                    <h1 id="productTitle"></h1>
+
+                    <div class="details-category" id="productCategory">
+                        🏷️ <span id="categoryText"></span>
+                    </div>
+
+                    <div class="details-price-wrap">
+                        <div class="details-price" id="productPrice"></div>
+                        <p class="details-price-note">Inclusive of all taxes</p>
+                    </div>
+
+                    <p class="details-desc" id="productDesc"></p>
+
+                    <div class="details-actions">
+                        <button class="btn btn-primary" onclick="buyNow()">
+                            🛒 Buy Now
+                        </button>
+                        <button class="btn btn-outline" onclick="addToWishlist()">
+                            ♡ Wishlist
+                        </button>
+                    </div>
+
+                    <div class="details-meta">
+                        <div class="details-meta-row">
+                            <span class="meta-label">📅 Added</span>
+                            <span class="meta-value" id="productDate"></span>
+                        </div>
+                        <div class="details-meta-row">
+                            <span class="meta-label">🆔 Product ID</span>
+                            <span class="meta-value" id="productIdMeta"></span>
+                        </div>
+                        <div class="details-meta-row">
+                            <span class="meta-label">🚚 Delivery</span>
+                            <span class="meta-value">Free delivery on orders above ₹499</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state" style="display:none;">
+                <div class="error-icon">⚠️</div>
+                <h3>Product not found</h3>
+                <p>The product you're looking for doesn't exist or has been removed.</p>
+                <a href="product.html" class="btn btn-primary" style="margin-top:20px;">
+                    ← Back to Products
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =========================================
+         RELATED PRODUCTS
+    ========================================== -->
+    <section class="related-section" id="relatedSection" style="display:none;">
+        <div class="section-wrap">
+
+            <h2>Related <span>Products</span></h2>
+
+            <div id="relatedProducts" class="products-grid">
+                <!-- Rendered by JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <span class="logo">⚡ SGS E-COM</span>
+                <p>A complete frontend e-commerce learning project by Soft Game Studio.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="product.html">📦 Products</a></li>
+                    <li><a href="profile.html">👤 Profile</a></li>
+                    <li><a href="admin.html">⚙️ Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>JS Concepts</h4>
+                <ul>
+                    <li><a href="#">URLSearchParams</a></li>
+                    <li><a href="#">fetch()</a></li>
+                    <li><a href="#">find()</a></li>
+                    <li><a href="#">async/await</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SGS E-COM. All rights reserved.</p>
+            <div class="footer-badge">
+                Built with ❤️ by <span>Soft Game Studio</span>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/products.js"></script>
+
+</body>
+</html>

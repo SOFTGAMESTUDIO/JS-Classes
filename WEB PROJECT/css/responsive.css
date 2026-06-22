@@ -1,0 +1,268 @@
+/*
+|--------------------------------------------------------------------------
+| SGS E-COM — RESPONSIVE STYLES
+|--------------------------------------------------------------------------
+| File: responsive.css
+| Breakpoints:
+|   Mobile:  < 640px
+|   Tablet:  < 1024px
+|--------------------------------------------------------------------------
+*/
+
+/* ========================================
+   TABLET — < 1024px
+======================================== */
+
+@media (max-width: 1024px) {
+
+    /* Admin layout - collapse sidebar */
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        width: 260px;
+        z-index: 2000;
+        transition: var(--transition);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .admin-sidebar.open {
+        left: 0;
+    }
+
+    .sidebar-toggle {
+        display: flex !important;
+    }
+
+    /* Product details grid */
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    /* Footer columns */
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ========================================
+   MOBILE — < 768px
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    .nav-search {
+        display: none;
+    }
+
+    .menu li a {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 70vh;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-stats {
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .hero-stat .stat-number {
+        font-size: 24px;
+    }
+
+    /* Sections */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header-left h2 {
+        font-size: 24px;
+    }
+
+    /* Products grid */
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 14px;
+    }
+
+    /* Admin topbar */
+    .admin-topbar {
+        padding: 12px 16px;
+    }
+
+    .admin-content {
+        padding: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .stat-value {
+        font-size: 24px;
+    }
+
+    /* Profile */
+    .profile-search-card,
+    .profile-card {
+        padding: 24px;
+        margin: 0 16px 24px;
+        max-width: 100%;
+    }
+
+    /* Footer */
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Features */
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Concepts */
+    .concepts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Flow */
+    .flow-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    /* Admin table on mobile */
+    .admin-table th:nth-child(1),
+    .admin-table td:nth-child(1) {
+        display: none;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE — < 480px
+======================================== */
+
+@media (max-width: 480px) {
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-input-group {
+        flex-direction: column;
+    }
+
+    .search-input-group button {
+        width: 100%;
+    }
+
+    .table-actions {
+        flex-direction: column;
+    }
+
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-hero h1 {
+        font-size: 24px;
+    }
+}
+
+/* ========================================
+   SIDEBAR TOGGLE BUTTON
+======================================== */
+
+.sidebar-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sidebar-toggle:hover {
+    background: var(--bg-glass);
+    border-color: var(--primary);
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg-overlay);
+    z-index: 1999;
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.active {
+    display: block;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all products in SGS E-COM — Filter, search, and sort products fetched from MockAPI using JavaScript.">
+
+    <title>Products | SGS E-COM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+    <!-- =========================================
+         HEADER / NAVBAR
+    ========================================== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">⚡ SGS E-COM</div>
+
+            <div class="nav-search">
+                <span class="search-icon">🔍</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="product.html" class="active">📦 Products</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- =========================================
+         PAGE HEADER
+    ========================================== -->
+    <div class="products-page-header">
+        <div class="section-wrap">
+
+            <div>
+                <h1>All <span>Products</span></h1>
+                <p style="color:var(--text-secondary); font-size:14px; margin-top:4px;">
+                    Browse our full catalogue — fetched live from MockAPI
+                </p>
+            </div>
+
+            <span class="product-count-badge" id="productCount">
+                Loading...
+            </span>
+
+        </div>
+    </div>
+
+    <!-- =========================================
+         FILTERS BAR
+    ========================================== -->
+    <div class="section-wrap" style="margin-top:28px;">
+        <div class="filters-bar">
+
+            <select id="categoryFilter" class="filter-select">
+                <option value="">📂 All Categories</option>
+            </select>
+
+            <select id="sortPrice" class="filter-select">
+                <option value="">↕️ Sort by Price</option>
+                <option value="low">⬆️ Low to High</option>
+                <option value="high">⬇️ High to Low</option>
+            </select>
+
+        </div>
+    </div>
+
+    <!-- =========================================
+         PRODUCTS MAIN
+    ========================================== -->
+    <div class="products-main">
+        <div class="section-wrap">
+
+            <!-- Loader -->
+            <div id="loader" class="loader-wrap">
+                <div class="spinner"></div>
+                <p>Fetching products from API...</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsContainer" class="products-grid">
+                <!-- Rendered by products.js -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <span class="logo">⚡ SGS E-COM</span>
+                <p>
+                    A complete frontend e-commerce learning project
+                    by Soft Game Studio.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="product.html">📦 Products</a></li>
+                    <li><a href="profile.html">👤 Profile</a></li>
+                    <li><a href="admin.html">⚙️ Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>JS Concepts</h4>
+                <ul>
+                    <li><a href="#">Array filter()</a></li>
+                    <li><a href="#">Array sort()</a></li>
+                    <li><a href="#">Dynamic DOM</a></li>
+                    <li><a href="#">Fetch API</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SGS E-COM. All rights reserved.</p>
+            <div class="footer-badge">
+                Built with ❤️ by <span>Soft Game Studio</span>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/products.js"></script>
+
+</body>
+</html>

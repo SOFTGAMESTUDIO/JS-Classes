@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View user profiles in SGS E-COM — fetch user data by ID from MockAPI using JavaScript.">
+
+    <title>User Profile | SGS E-COM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+    <!-- =========================================
+         HEADER / NAVBAR
+    ========================================== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">⚡ SGS E-COM</div>
+
+            <div class="nav-search" style="opacity:0.5; pointer-events:none;">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search products..." disabled>
+            </div>
+
+            <ul class="menu">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="product.html">📦 Products</a></li>
+                <li><a href="profile.html" class="active">👤 Profile</a></li>
+                <li><a href="admin.html">⚙️ Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- =========================================
+         PAGE HERO
+    ========================================== -->
+    <div class="page-hero">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <h1>User <span>Profile</span></h1>
+        <p>Fetch any user by ID — demonstrating Fetch API + Error Handling</p>
+    </div>
+
+    <!-- =========================================
+         PROFILE MAIN
+    ========================================== -->
+    <div class="profile-main">
+
+        <!-- Search Card -->
+        <div class="profile-search-card">
+
+            <div class="search-card-icon">👤</div>
+
+            <h2>Find User Profile</h2>
+            <p>
+                Enter a User ID (1–100) to fetch their profile
+                from MockAPI using <code style="color:var(--primary-light); background:var(--bg-glass); padding:2px 6px; border-radius:4px;">async/await</code>
+            </p>
+
+            <div class="search-input-group">
+                <input
+                    type="number"
+                    id="userId"
+                    placeholder="Enter User ID (e.g. 1)"
+                    min="1"
+                    max="100"
+                    autocomplete="off"
+                >
+                <button id="loadBtn" onclick="loadUser()">
+                    Load Profile
+                </button>
+            </div>
+
+            <p class="search-hint">
+                💡 Try any number between 1 and 100
+            </p>
+
+            <!-- Error Box -->
+            <div class="profile-error" id="profileError">
+                ⚠️ <span id="errorText">User not found</span>
+            </div>
+
+        </div>
+
+        <!-- Profile Card (hidden until loaded) -->
+        <div class="profile-card" id="profileCard">
+
+            <div class="profile-card-header">
+
+                <div class="avatar-wrap">
+                    <img id="avatar" class="profile-avatar" src="" alt="User Avatar">
+                    <span class="avatar-badge">✓</span>
+                </div>
+
+                <h2 class="profile-name" id="profileName">—</h2>
+
+                <span class="profile-id-tag" id="profileIdTag">ID: #—</span>
+
+            </div>
+
+            <div class="profile-info-list">
+
+                <div class="info-row">
+                    <div class="info-row-icon">📧</div>
+                    <div class="info-row-content">
+                        <div class="info-row-label">Email Address</div>
+                        <div class="info-row-value" id="profileEmail">—</div>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-row-icon">📞</div>
+                    <div class="info-row-content">
+                        <div class="info-row-label">Phone Number</div>
+                        <div class="info-row-value" id="profilePhone">—</div>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-row-icon">🏙️</div>
+                    <div class="info-row-content">
+                        <div class="info-row-label">City</div>
+                        <div class="info-row-value" id="profileCity">—</div>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-row-icon">📅</div>
+                    <div class="info-row-content">
+                        <div class="info-row-label">Member Since</div>
+                        <div class="info-row-value" id="profileCreated">—</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="profile-card-footer">
+                <button class="btn btn-outline" onclick="clearProfile()">
+                    ✕ Clear
+                </button>
+                <a href="admin.html" class="btn btn-primary">
+                    ⚙️ Manage in Admin
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <span class="logo">⚡ SGS E-COM</span>
+                <p>A complete frontend e-commerce learning project by Soft Game Studio.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="product.html">📦 Products</a></li>
+                    <li><a href="profile.html">👤 Profile</a></li>
+                    <li><a href="admin.html">⚙️ Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>JS Concepts</h4>
+                <ul>
+                    <li><a href="#">Fetch by ID</a></li>
+                    <li><a href="#">Form Validation</a></li>
+                    <li><a href="#">Error Handling</a></li>
+                    <li><a href="#">DOM Update</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 SGS E-COM. All rights reserved.</p>
+            <div class="footer-badge">
+                Built with ❤️ by <span>Soft Game Studio</span>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+</html>
