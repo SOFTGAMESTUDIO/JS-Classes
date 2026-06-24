@@ -13,6 +13,8 @@ function fetchData() {
     });
 }
 
+
+
 async function getData() {
     const data = await fetchData();
 

@@ -8,6 +8,7 @@
 
 
 
+
 // const promise = new Promise((resolve, reject) => {
 
 // });
@@ -51,18 +52,19 @@
 
 
 
-// const usersPromise = fetchUsers();
+const usersPromise = fetchUsers(); 
 
-// const postsPromise = fetchPosts();
+const postsPromise = fetchPosts();
 
-// const commentsPromise = fetchComments();
+const commentsPromise = fetchComments();
 
-// const [users, posts, comments] =
-// await Promise.all([
-//     usersPromise,
-//     postsPromise,
-//     commentsPromise
-// ]);
+const [users, posts, comments] =
+await Promise.all([
+    usersPromise,
+    postsPromise,
+    commentsPromise
+]);
+
 
 
 

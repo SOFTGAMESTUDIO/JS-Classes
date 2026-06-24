@@ -16,3 +16,10 @@
 // User cannot interact during that time.
 
 // This creates a blocking operation.
+
+
+
+console.log("Start");
+console.log("Fetching Data...");
+console.log("End");
+

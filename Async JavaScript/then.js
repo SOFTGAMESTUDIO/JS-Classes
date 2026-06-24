@@ -1,15 +1,15 @@
-// fetch("/user")
-// .then(res => res.json())
-// .then(user => {
-//     return fetch(`/orders/${user.id}`);
-// })
-// .then(res => res.json())
-// .then(orders => {
-//     console.log(orders);
-// })
-// .catch(error => {
-//     console.log(error);
-// });
+fetch("/user")
+.then(res => res.json())
+.then(user => {
+    return fetch(`/orders/${user.id}`);
+})
+.then(res => res.json())
+.then(orders => {
+    console.log(orders);
+})
+.catch(error => {
+    console.log(error);
+});
 
 
 // flow strucher 

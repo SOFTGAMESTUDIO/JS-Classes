@@ -11,7 +11,7 @@
 // }, 1000); 
 
 // setTimeout(() => { 
-//     clearInterval(timer); 
+//   clearInterval(timer); 
 //     console.log("Process End")
 //     console.log("Addition of A + B : 30")
 // }, 5000);

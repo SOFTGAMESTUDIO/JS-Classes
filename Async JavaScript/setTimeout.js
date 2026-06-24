@@ -9,9 +9,9 @@
 
 // console.log("OTP Sent");
 
-// setTimeout(() => {
-//     console.log("OTP Expired");
-// }, 30000);
+setTimeout(() => {
+    console.log("OTP Expired");
+}, 30000);
 
 
 
