@@ -5,23 +5,21 @@
 // {
 //   "name": "Livesh",
 //   "age": 22,
-//   "city": "Punjab"
 // }
 
 
-const user = {
-    name: "Livesh",
-    age: 22
-};
+// const user = {
+//     name: "Livesh",
+//     age: 22
+// };
 
-const jsonData = JSON.stringify(user);
+// const jsonData = JSON.stringify(user);
 
-console.log(jsonData);
+// console.log(jsonData);
 
+// const jsonData1 =
+// '{"name":"Livesh","age":22}';
 
-const jsonData1 =
-'{"name":"Livesh","age":22}';
+// const user1 = JSON.parse(jsonData1);
 
-const user1 = JSON.parse(jsonData1);
-
-console.log(user1.name);
+// console.log(user1);

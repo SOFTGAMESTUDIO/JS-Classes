@@ -22,7 +22,7 @@ Your App  <--- API Response --- Server
 
 // * GET
 // * POST
-// * PUT
+// * PUT 
 // * PATCH
 // * DELETE
 
@@ -64,7 +64,7 @@ Your App  <--- API Response --- Server
 
 // Operation	            Method
 // Create Data	            POST
-// Read Data	            GET
+// Read Data	            GET   
 // Update Entire Data	    PUT
 // Update Partial Data	    PATCH
 // Delete Data	            DELETE
