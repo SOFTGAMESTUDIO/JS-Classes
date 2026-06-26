@@ -2,6 +2,7 @@
 // ERROR HANDLING
 // ==========================================================
 
+
 // Errors may occur while making API requests.
 
 // Common Reasons:
@@ -33,16 +34,15 @@
 // async function getUsers() {
 
 //   try {
-
 //     const response = await fetch(
 //       "https://jsonplaceholder.typicode.com/users"
 //     );
-
 //     const data =
 //     await response.json();
-
 //     console.log(data);
-
+//      console.log(
+//       "try block exicuted"
+//     );
 //   }
 //   catch(error) {
 
@@ -50,12 +50,25 @@
 //       "Error:",
 //       error.message
 //     );
+//      console.log(
+//       "Catch block exicuted"
+//     );
 
 //   }
 
 // }
 
+
+
+
 // getUsers();
+
+
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(error => console.log("Error : ",error))
 
 // ==========================================================
 // CHECKING HTTP ERRORS
@@ -73,13 +86,10 @@
 // Example
 
 // async function getUsers() {
-
 //   try {
-
 //     const response = await fetch(
 //       "https://jsonplaceholder.typicode.com/users"
 //     );
-
 //     if (!response.ok) {
 
 //       throw new Error(
@@ -87,21 +97,15 @@
 //       );
 
 //     }
-
 //     const data =
 //     await response.json();
-
 //     console.log(data);
-
 //   }
 //   catch(error) {
-
 //     console.log(
 //       error.message
 //     );
-
 //   }
-
 // }
 
 // getUsers();
@@ -274,3 +278,28 @@ Display     catch()
 // Q. Which block handles errors?
 
 // catch(error)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function hello(a, b){
+    
+//     try{
+//         let c = a && b;
+//     }
+//     catch{
+//         console.log("b dot zero")
+//     }
+// }
+
+// hello(0,5)

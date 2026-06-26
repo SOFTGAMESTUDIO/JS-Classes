@@ -203,53 +203,45 @@ Browser
 //     email: "sss@gmail.com"
 // }
 
-// fetch(
-//   "https://jsonplaceholder.typicode.com/posts", {
-//     method: "POST",
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then(response => response.json())
+.then(data => {
+  console.log(data);
+})
 
-//     headers: {
-//       "Content-Type":
-//       "application/json"
-//     },
-//     body: JSON.stringify(user)
-//   }
-// )
-// .then(response => response.json())
-// .then(data => {
-//   console.log(data);
-// });
+
 
 // Async Await Version
 
-async function createPost() {
+// async function createPost() {
 
-  const response = await fetch(
-    "https://jsonplaceholder.typicode.com/posts",
-    {
-      method: "POST",
+//   const response = await fetch(
+//     "https://jsonplaceholder.typicode.com/posts",
+//     {
+//       method: "POST",
 
-      headers: {
-        "Content-Type":
-        "application/json"
-      },
+//       headers: {
+//         "Content-Type":
+//         "application/json"
+//       },
 
-      body: JSON.stringify({
-        title: "JavaScript",
-        body: "Learning APIs"
-      })
-    }
-  );
+//       body: JSON.stringify({
+//         title: "JavaScript",
+//         body: "Learning APIs"
+//       })
+//     }
+//   );
 
-  console.log(response.status);
+//   console.log(response.status);
 
-  const data =
-  await response.json();
+//   const data =
+//   await response.json();
 
-  console.log(data);
+//   console.log(data);
 
-}
+// }
 
-createPost();
+// createPost();
 
 // ==========================================================
 // HEADERS
@@ -333,7 +325,7 @@ email:"[john@gmail.com](mailto:john@gmail.com)"
 // async function replaceUser() {
 
 //   const response = await fetch(
-//     "http://localhost:5000/users/1",
+//     "http://localhost:5000/users/3",
 //     {
 //       method: "PUT",
 
@@ -343,8 +335,9 @@ email:"[john@gmail.com](mailto:john@gmail.com)"
 //       },
 
 //       body: JSON.stringify({
-//         name: "Livesh",
-//         email: "[livesh@gmail.com](mailto:livesh@gmail.com)"
+//         name: "Rohit",
+//       //   email: "Rohit@gmail.com",
+//       //   phone : "0123456789"
 //       })
 //     }
 //   );
@@ -395,7 +388,7 @@ email:"[john@gmail.com](mailto:john@gmail.com)"
 // async function updateUser() {
 
 //   const response = await fetch(
-//     "http://localhost:5000/users/1",
+//     "http://localhost:5000/users/5",
 //     {
 //       method: "PATCH",
 
@@ -446,7 +439,7 @@ email:"[john@gmail.com](mailto:john@gmail.com)"
 // async function deleteUser() {
 
 //   const response = await fetch(
-//     "http://localhost:5000/users/1",
+//     "http://localhost:5000/users/4",
 //     {
 //       method: "DELETE"
 //     }

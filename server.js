@@ -160,7 +160,7 @@ app.put("/users/:id", async (req, res) => {
   users[index] = {
     id: Number(req.params.id),
     name: req.body.name,
-    email: req.body.email
+    email: req.body.email || "test@gmail.com"
   };
 
   await saveUsers(users);

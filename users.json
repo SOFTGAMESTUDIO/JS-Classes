@@ -1,27 +1,21 @@
 [
   {
     "id": 1,
-    "name": "John",
-    "email": "john@gmail.com"
+    "name": "Livesh",
+    "email": "livesh@gmail.com"
   },
   {
     "id": 2,
-    "name": "Emma",
-    "email": "emma@gmail.com"
+    "name": "Rohit",
+    "email": "Rohit@gmail.com"
   },
   {
     "id": 3,
-    "name": "Alex",
-    "email": "alex@gmail.com"
-  },
-  {
-    "id": 4,
-    "name": "Sophia",
-    "email": "sophia@gmail.com"
+    "name": "Rohit"
   },
   {
     "id": 5,
-    "name": "David",
+    "name": "Livesh Garg",
     "email": "david@gmail.com"
   }
 ]
