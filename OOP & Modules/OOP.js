@@ -54,7 +54,8 @@
 
 // console.log(s1);
 // console.log(s2);
-// s3.greet()
+// console.log(s3);
+
 
 // 'this' Keyword
 
@@ -126,8 +127,7 @@
 // class Student extends Person {
 
 //     constructor(name, course) {
-//         super()
-//         this.name = name;
+//         super(name)
 //         this.course = course;
 //     }
 
@@ -178,7 +178,8 @@
 // class BankAccount {
 
 //     #balance = 0;
-
+    
+ 
 //     deposit(amount) {
 //         this.#balance += amount;
 //     }
@@ -187,6 +188,7 @@
 //         console.log(#balance);
 //     }
 
+    
 // }
 
 // const account = new BankAccount();
@@ -242,16 +244,15 @@
 // Static methods belong to the class, not the object.
 
 
-class MathUtil {
+// class MathUtil {
 
-    static add(a, b) {
-        return a + b;
-    }
+//     static add(a, b) {
+//         return a + b;
+//     }
 
-}
+// }
 
-console.log(MathUtil.add(10, 20));
-console.log(MathUtil.add(10, 20));
-console.log(MathUtil.add(10, 20));
+// console.log(MathUtil.add(10, 20));
+
 
 
